@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,intial-scale=1">
+        <title>Homework4</title>
+        <style>
+            body {
+                background-image: url("DSC_3403.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-attachment: fixed;
+            }
+            ul {
+                list-style-type: none;
+                position: absolute;
+                font-size: 50px;
+                margin: 50px 100px;
+                display: flex;
+                width: 100%;
+                align-items: center;
+            }
+            li {
+                display: inline-block;
+            }
+            li a {
+                text-decoration: none;
+                color:white;
+                text-align: center;
+                padding: 50px;
+            }
+            .ul2 {
+                background-color: rgb(255, 255, 255);
+                position: absolute;
+                width: 200px;
+                flex-direction: column;
+                text-align: center;
+                border-radius: 5px;
+                top: 7px;
+                transition: all 0.4s;
+            }
+            .li2 {
+                position: relative;
+                z-index: 1;
+            }
+            .ul2 li a {
+                padding: 20px 0px;
+                color: black;
+                display: block;
+            }
+            .micro {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 1200px;
+                flex-direction: column;
+            }
+            .mocro input {
+                height: 550px;
+                width: 600px;
+                border-radius: 200px;
+                padding-left: 100px;
+                size: 500px;
+            }
+            .micro input:hover{
+                width: 900px;
+                transition: all 0.5s;
+            }
+            button{
+                margin-top: 10px;
+                padding: 10px 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li><img src="微软.png"></li>
+            <li><a href="#">picture</a></li>
+            <li><a href="#">video</a></li>
+            <li class="li2" class="act"><a href="#">more</a>
+                <ul class="ul2" style="display: ;">
+                    <li><a href="#">map</a></li>
+                    <li><a href="#">news</a></li>
+                </ul>
+            </li>
+        </ul>
+        <div class="micro">
+            <input type="search">
+            <a href="#"><button>search</button></a>
+        </div>
+    </body>
+</html>
