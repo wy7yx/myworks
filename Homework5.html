@@ -36,21 +36,27 @@
     </div>
 
     <script>
-        var oBody = document.getElementById("demo");
-        var i = 0;
-        var intervalID;
-        var isPaused = false;
+        let oBody = document.getElementById("demo");
+        let i = 0;
+        let timerId;
+        let flag = false;
 
         function timing() {
-            if(!isPaused){
-                intervalID = setInterval(updateNum,1000);
-                    updateNum();
-                    isPaused = true;
-            }else{
-                clearInterval(intervalID)
-                isPaused=flase;
+            if (!flag) {
+                flag = true;
+                timerId = setInterval(updateNum, 1000);
+            } else {
+                clearInterval(timerId);
+                flag = false;
             }
         }
+
+        function updateNum() {
+            let j = i++;
+            oBody.innerHTML = "Time passed: " + "<span>" + j + "</span>" + " s";
+        }
+
+    </script>
         
         function updateNum() {
                 var j = i++;
