@@ -1,0 +1,86 @@
+body {
+    background-color: antiquewhite;
+}
+
+.logo {
+    font-size: 40px;
+    color: black;
+    text-decoration: none;
+    margin: 0px 0px;
+    float: left;
+    width: 50%;
+    padding: 10px;
+}
+
+.icons {
+    float: right;
+    padding: 10px;
+}
+
+.icons li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0px;
+}
+
+li a {
+    color: black;
+    text-decoration: none;
+    margin: auto;
+}
+
+#banner {
+    clear: left;
+    text-align: center;
+    padding: 20px;
+    margin: 20px;
+}
+
+section h2 {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.features {
+    text-align: center;
+}
+
+.posts article {
+    float: left;
+    width: 33%;
+    margin: 0px;
+}
+
+.post article h3 {
+    text-align: center;
+}
+
+.alt {
+    padding: 20px 600px;
+    margin-top: 20px;
+}
+
+#menu li {
+    position: relative;
+    display: inline-block;
+    padding: 0px 15px;
+}
+
+#sidebar section.major {
+    font-size: xx-small;
+}
+
+section.contact {
+    float: right;
+    width: 50%;
+    margin: 0px;
+}
+
+#footer {
+    font-size: xx-small;
+    text-align: center;
+}
