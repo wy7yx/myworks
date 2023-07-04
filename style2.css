@@ -1,0 +1,112 @@
+.logo {
+    color:white;
+    font-size: xxx-large;
+    height: 200px;
+    padding: 40px 20px;
+    text-decoration: none;
+}
+
+.icons {
+    margin-top: 20px;
+    color:white;
+    font-size: larger;
+    list-style-type: none;
+}
+
+.icons li {
+    display: inline-block;
+    padding: 20px;
+}
+
+.icons li a:hover{
+    background-color: red;
+    padding: 15px;
+}
+
+#header {
+    background-color: black;
+    padding-top: 20px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0px;
+}
+
+.icons li a{
+    color: white;
+    text-decoration: none;
+    margin: auto;
+}
+
+li a {
+    color: black;
+    text-decoration: none;
+    margin: auto;
+}
+
+#banner {
+    float: left;
+    text-align: center;
+    margin: 0px;
+    width: 50%;
+}
+
+section h2 {
+    text-align: left;
+    padding-top: 20px;
+}
+
+.features {
+    text-align: center;
+}
+
+.features article {
+    padding: 20px 60px;
+}
+
+
+.posts article {
+    overflow: auto;
+}
+.posts article img{
+    float: left;
+    width: 30%;
+    padding: 20px;
+    margin: 0px;
+    clear: left;
+}
+
+.posts article h3,p,ul {
+    vertical-align: auto;
+    padding: 20px;
+
+}
+
+input[type="text"]{
+    width: 500px;
+    display: block;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+nav h2 {
+    text-align: center;
+}
+
+nav ul {
+    margin: auto;
+    margin: 0px 725px;
+}
+
+#menu li {
+    display: inline-block;
+    padding: 0px 15px;
+}
+
+#footer {
+    font-size: xx-small;
+    text-align: center;
+}
