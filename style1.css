@@ -55,10 +55,6 @@ section h2 {
     margin: 0px;
 }
 
-.post article h3 {
-    text-align: center;
-}
-
 .alt {
     padding: 20px 600px;
     margin-top: 20px;
@@ -68,16 +64,6 @@ section h2 {
     position: relative;
     display: inline-block;
     padding: 0px 15px;
-}
-
-#sidebar section.major {
-    font-size: xx-small;
-}
-
-section.contact {
-    float: right;
-    width: 50%;
-    margin: 0px;
 }
 
 #footer {
