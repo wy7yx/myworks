@@ -46,15 +46,16 @@ li a {
 }
 
 #banner {
-    float: left;
+    float: right;
     text-align: center;
     margin: 0px;
-    width: 50%;
+    width: 70%;
+    overflow: hidden;
 }
 
 section h2 {
     text-align: left;
-    padding-top: 20px;
+    padding: 20px;
 }
 
 .features {
@@ -62,48 +63,71 @@ section h2 {
 }
 
 .features article {
-    padding: 20px 60px;
+    padding: 0px 10px;
 }
-
 
 .posts article {
     overflow: auto;
 }
+
 .posts article img{
     float: left;
     width: 30%;
     padding: 20px;
     margin: 0px;
-    clear: left;
 }
 
 .posts article h3,p,ul {
     vertical-align: auto;
-    padding: 20px;
+    padding: 15px;
+}
 
+#main {
+    float: left;
+    width: 75%;
+    margin: 0px;
+}
+
+#sidebar {
+    float: left;
+    width: 25%;
+    margin: 0px;
 }
 
 input[type="text"]{
-    width: 500px;
+    width: 300px;
     display: block;
     margin: auto;
     margin-top: 50px;
+    padding: 12px 20px;
     display: flex;
-    flex-direction: column;
+    border-radius: 15px;
 }
 
 nav h2 {
     text-align: center;
 }
 
-nav ul {
-    margin: auto;
-    margin: 0px 725px;
+#menu ul {
+    text-align: center;
 }
 
 #menu li {
-    display: inline-block;
-    padding: 0px 15px;
+    padding: 10px;
+}
+
+#sidebar section h2{
+    text-align: center;
+}
+
+#sidebar section p {
+    text-align: center;
+    padding: 20px;
+}
+
+#sidebar section ul {
+    text-align: center;
+    padding: 20px;
 }
 
 #footer {
