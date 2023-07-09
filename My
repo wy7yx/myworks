@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>My Room</title>
+    <style>
+        body {
+            background-image: url('room.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        #button-container {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+        }
+        #button-container button {
+            display: block;
+            padding: 10px;
+            margin: 20px;
+            border-radius: 15px;
+        }
+        #room {
+            position: relative;
+            width: 100%;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 游戏内容 -->
+    <div id="room"></div>
+
+    <div id="button-container">
+    <button id="btn">家具</button>
+    <button id="up">向上</button>
+    <button id="down">向下</button>
+    <button id="screenshot">拍照</button>
+    </div>
+
+    <script>
+    var furnitureTypes = ['furniture1.png', 'furniture2.png', 'furniture3.png','furniture4.png','furniture5.png','furniture6.png','furniture7.png',
+    'furniture8.png','furniture9.png','furniture10.png','furniture11.png','furniture12.png','furniture13.png','furniture14.png'];  // 家具图片的路径
+    var index = 0;
+
+    var furnitureSizes = [
+        {width: '140px', height: '260px'},  // 第一个家具的大小
+        {width: '90px', height: '320px'},  // 第二个家具的大小
+        {width: '350px', height: '370px'},  // 第三个家具的大小
+        {width: '100px', height: '200px'},
+        {width: '80px', height: '200px'},  // 第五个家具的大小
+        {width: '80px', height: '200px'},
+        {width: '150px', height: '200px'},  // 第七个家具的大小
+        {width: '220px', height: '200px'},
+        {width: '200px', height: '240px'},  // 第九个家具的大小
+        {width: '320px', height: '280px'},
+        {width: '250px', height: '250px'},  // 第十一个家具的大小
+        {width: '160px', height: '220px'},
+        {width: '120px', height: '180px'},
+        {width: '100px', height: '170px'},
+    ];
+
+    document.getElementById('btn').addEventListener('click', function() {
+    if (index < furnitureTypes.length) {
+        var img = document.createElement('img');
+        img.src = furnitureTypes[index];  // 添加不同的家具图片
+        img.className = 'draggable';
+        img.style.position = 'absolute';
+        img.style.left = '40%';
+        img.style.top = '50%';
+        img.style.width = furnitureSizes[index].width;  // 设置图片的宽度
+        img.style.height = furnitureSizes[index].height;   // 设置图片的高度
+        document.getElementById('room').appendChild(img);
+        index++;
+    }
+    });
+
+    // 实现拖动功能
+    var selected = null, x_pos = 0, y_pos = 0, x_elem = 0, y_elem = 0;
+
+    function _drag_init(elem) { 
+        selected = elem;
+        x_elem = x_pos - selected.offsetLeft;
+        y_elem = y_pos - selected.offsetTop;
+    }
+
+    function _move_elem(e) {
+        x_pos = document.all ? window.event.clientX : e.pageX;
+        y_pos = document.all ? window.event.clientY : e.pageY;
+        if (selected !== null) {
+            selected.style.left = (x_pos - x_elem) + 'px';
+            selected.style.top = (y_pos - y_elem) + 'px';
+        }
+    }
+
+    function _destroy() {
+        selected = null;
+    }
+
+    document.getElementById('room').onmousedown = function (e) {
+        _drag_init(e.target);
+        return false;
+    };
+
+    document.onmousemove = _move_elem;
+    document.onmouseup = _destroy;
+
+    document.getElementById('room').addEventListener('dblclick', function(e) {
+        if (e.target.tagName === 'IMG') {
+            if (e.target.style.transform === '') {
+                e.target.style.transform = 'scaleX(-1)';  // 水平翻转
+            } else {
+                e.target.style.transform = '';  // 恢复原样
+            }
+        }
+    });
+
+    var selectedFurniture = null;
+
+    document.getElementById('room').addEventListener('click', function(e) {
+        if (e.target.tagName === 'IMG') {
+            selectedFurniture = e.target;
+        }
+    });
+
+    document.getElementById('up').addEventListener('click', function() {
+        if (selectedFurniture) {
+            selectedFurniture.style.zIndex = parseInt(selectedFurniture.style.zIndex || '0') + 1;
+        }
+    });
+
+    document.getElementById('down').addEventListener('click', function() {
+        if (selectedFurniture) {
+            selectedFurniture.style.zIndex = parseInt(selectedFurniture.style.zIndex || '0') - 1;
+        }
+    });
+
+    document.getElementById('screenshot').addEventListener('click', function() {
+    // 隐藏所有按钮
+    var buttons = document.getElementsByTagName('button');
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].style.display = 'none';
+    }
+
+    // 对游戏画面进行截屏
+    html2canvas(document.getElementById('room')).then(function(canvas) {
+        var link = document.createElement('a');
+        link.href = canvas.toDataURL('image/jpeg');  // 修改这里
+        link.download = 'screenshot.jpeg';  // 修改这里
+        link.click();
+    });
+
+    // 显示所有按钮
+    for (var i = 0; i < buttons.length; i++) {
+        buttons[i].style.display = '';
+    }
+    });
+
+    var img = document.createElement('img');
+    img.src = 'https://cors-anywhere.herokuapp.com/' + furnitureTypes[index % furnitureTypes.length];  // 使用代理服务器
+
+    var img = document.createElement('img');
+    img.src = 'https://your-domain.com/path/to/furniture.jpg'; 
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+</body>
+</html>
